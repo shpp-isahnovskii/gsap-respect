@@ -1,15 +1,11 @@
 <script setup>
 import PagePreloader from './components/PagePreloader.vue';
-import PageLayout from './components/PageLayout.vue';
-import { gsap } from 'gsap';
-import { ref } from 'vue';
+import LayoutPage from './components/LayoutPage.vue';
+import { usePageReady } from '@/composables/useWindowLoad';
 
-const tl = gsap.timeline();
-
-const isPreLoadFinished = ref(false);
+const { currentProgress, isReady } = usePageReady();
 </script>
 
 <template>
-  <PagePreloader @is-loaded="isPreLoadFinished = true" />
-  <PageLayout :play-gsap="isPreLoadFinished" />
+  <component :is="isReady ? LayoutPage : PagePreloader" />
 </template>

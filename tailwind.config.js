@@ -1,14 +1,11 @@
 module.exports = {
-  content: [
-    './public/**/*.html',
-    './src/**/*.{js,jsx,ts,tsx,vue}',
-  ],
+  content: ['./public/**/*.html', './src/**/*.{js,jsx,ts,tsx,vue}'],
   theme: {
     extend: {
       colors: {
-      primary: '#E63E3A',
-      black: '#101820',
-    },
+        primary: '#E63E3A',
+        black: '#101820',
+      },
       fontFamily: {
         suisseIntl: ['SuisseIntl', 'sans-serif'],
       },
