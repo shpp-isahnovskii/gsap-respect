@@ -1,6 +1,6 @@
 <script setup>
 import { gsap } from 'gsap';
-import { onMounted, watch } from 'vue';
+import { onMounted } from 'vue';
 import SplitType from 'split-type';
 
 let firstWord;
