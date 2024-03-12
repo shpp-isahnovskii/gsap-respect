@@ -19,7 +19,8 @@ const imagesArray = [heroImageFour, heroImageThree, heroImageTwo, heroImageOne];
     v-for="(image, index) in imagesArray"
     :key="index"
     :src="image"
-    :class="[index !== 0 && 'absolute', 'hero-img w-full top-0']"
+    :class="[index !== 0 && 'absolute', 'hero-img h-auto w-full object-cover top-0']"
     :alt="`hero image, slide ${index}`"
+    height="905" width="2000"
   />
 </template>

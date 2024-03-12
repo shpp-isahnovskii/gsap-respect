@@ -4,10 +4,28 @@ import CompanyLogo from './CompanyLogo.vue';
 import CompanyLogoMini from './CompanyLogoMini.vue';
 import HeroCarousel from './HeroCarousel.vue';
 import { gsap } from 'gsap';
-
-let tl = gsap.timeline({ defaults: { delay: 2 } });
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import SplitType from 'split-type';
 
 onMounted(() => {
+  const splittedText = new SplitType('.build-business', { types: 'lines' }).lines;
+
+  const tl = gsap.timeline({
+    defaults: { delay: 2 },
+  });
+
+  tl.fromTo(splittedText, {opacity: 0}, {
+    opacity: 1,
+    duration: 2,
+    scrollTrigger: {
+      trigger: '.build-business',
+      start: 'top 80%',
+      end: 'bottom center',
+      scrub: 1,
+      //markers: true,
+    },
+  });
+
   tl.add('start')
     .to('.overlay', { y: '-100%', duration: 1.5 }, 'start')
     .from('.navigation-n-hero', { y: '+20%', opacity: 0, duration: 1.5 }, 'start');
@@ -17,11 +35,11 @@ onMounted(() => {
 <template>
   <header class="relative">
     <CompanyLogo />
-    <div class="fixed w-full h-full overlay bg-black z-[9]" />
+    <!-- <div class="fixed w-full h-full overlay bg-black z-[9]" /> -->
     <div class="navigation-n-hero relative">
       <HeroCarousel />
-      <div class="bg-primary h-screen">
-        <nav class="relative grid grid-cols-12 justify-stretch p-3">
+      <div class="bg-primary h-screen p-3">
+        <nav class="relative grid grid-cols-12 justify-stretch">
           <CompanyLogoMini class="absolute col-start-1 col-end-3" />
           <ul class="flex justify-between col-start-3 col-end-7 mt-3">
             <li><a href="#">Services</a></li>
@@ -39,6 +57,11 @@ onMounted(() => {
             Book a call
           </button>
         </nav>
+        <div
+          class="build-business text-[7rem]/[6.5rem] text-right max-w-[54rem] ml-auto mt-24"
+        >
+          Growing businesses by building relationships
+        </div>
       </div>
     </div>
   </header>

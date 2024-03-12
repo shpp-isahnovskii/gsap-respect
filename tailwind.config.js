@@ -7,7 +7,7 @@ module.exports = {
         black: '#101820',
       },
       fontFamily: {
-        suisseIntl: ['SuisseIntl', 'sans-serif'],
+        suisseIntl: ['SuisseIntl', 'Arial', 'sans-serif'],
       },
       screen: {
         xl: '1366px',

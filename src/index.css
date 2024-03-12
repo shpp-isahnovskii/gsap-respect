@@ -12,6 +12,6 @@
     @apply font-suisseIntl text-black;
   }
   body {
-    @apply overflow-hidden bg-black;
+    @apply bg-black;
   }
 }
