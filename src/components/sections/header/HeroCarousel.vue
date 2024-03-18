@@ -9,18 +9,47 @@ import heroImageFour from '@/assets/images/heroImageFour.webp';
 const tl = gsap.timeline({ repeat: -1, repeatDelay: 1, delay: 1 });
 
 onMounted(() => {
-  tl.from('.hero-img', { opacity: 0, stagger: 1, duration: 0 });
+  tl.add('hero-loop').from(
+    '.hero-img',
+    {
+      opacity: 0,
+      stagger: 1,
+      duration: 0,
+    },
+    'hero-loop',
+  );
+  gsap.to('.pinned-hero', {
+    scrollTrigger: {
+      trigger: '.pinned-hero',
+      start: 'top top',
+      pin: true,
+      pinSpacing: false,
+    },
+  });
+  // gsap.to('.scroll-fading-hero', {
+  //   scrollTrigger: {
+  //     trigger: '.scroll-fading-hero',
+  //     start: 'top top',
+  //     scrub: true,
+  //   },
+  //   opacity: 0.5,
+  // });
 });
 
 const imagesArray = [heroImageFour, heroImageThree, heroImageTwo, heroImageOne];
 </script>
 <template>
-  <img
-    v-for="(image, index) in imagesArray"
-    :key="index"
-    :src="image"
-    :class="[index !== 0 && 'absolute', 'hero-img h-auto w-full object-cover top-0']"
-    :alt="`hero image, slide ${index}`"
-    height="905" width="2000"
-  />
+  <div class="pinned-hero">
+    <div class="scroll-fading-hero">
+      <img
+        v-for="(image, index) in imagesArray"
+        :key="index"
+        :src="image"
+        :class="[{ absolute: index !== 0 }, 'hero-img h-auto w-full object-cover top-0']"
+        :alt="`hero image, slide ${index}`"
+        height="905"
+        width="2000"
+      />
+    </div>
+  </div>
 </template>

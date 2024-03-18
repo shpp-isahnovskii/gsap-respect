@@ -1,6 +1,6 @@
 <script setup>
 import PagePreloader from './components/PagePreloader.vue';
-import LayoutPage from './components/LayoutPage.vue';
+import PageLayout from './components/PageLayout.vue';
 import { usePageReady } from '@/composables/useWindowLoad';
 import { gsap, ScrollTrigger } from 'gsap/all';
 
@@ -10,5 +10,5 @@ const { isReady } = usePageReady();
 </script>
 
 <template>
-  <component :is="isReady ? LayoutPage : PagePreloader" />
+  <component :is="isReady ? PageLayout : PagePreloader" />
 </template>
