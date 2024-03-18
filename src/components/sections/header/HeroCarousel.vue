@@ -26,14 +26,14 @@ onMounted(() => {
       pinSpacing: false,
     },
   });
-  // gsap.to('.scroll-fading-hero', {
-  //   scrollTrigger: {
-  //     trigger: '.scroll-fading-hero',
-  //     start: 'top top',
-  //     scrub: true,
-  //   },
-  //   opacity: 0.5,
-  // });
+  gsap.to('.scroll-fading-hero', {
+    scrollTrigger: {
+      trigger: '.scroll-fading-hero',
+      start: 'top top',
+      scrub: true,
+    },
+    opacity: 0.5,
+  });
 });
 
 const imagesArray = [heroImageFour, heroImageThree, heroImageTwo, heroImageOne];
