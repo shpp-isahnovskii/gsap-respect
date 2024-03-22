@@ -1,28 +1,14 @@
 <script setup>
 import { onMounted } from 'vue';
 import { gsap } from 'gsap';
-import SplitType from 'split-type';
+import { splittedText } from '@/animations/splittedText';
+import { fadeIn } from '@/animations/fadeIn';
 
 onMounted(() => {
-  const splittedText = new SplitType('.section-business', { types: 'chars, lines' });
-  gsap.from(splittedText.chars, {
-    scrollTrigger: {
-      trigger: splittedText.lines,
-      start: 'top 80%',
-      end: 'bottom 50%',
-      scrub: true,
-      once: true,
-    },
-    opacity: 0,
-    stagger: 0.1,
-    onComplete: () => {
-      gsap.to('.section-business--agency', {
-        delay: 0.5,
-        opacity: 1,
-        duration: 1,
-      });
-    },
-  });
+  /* preset */
+  gsap.set('.section-analytics--paragraph', { opacity: 0 });
+
+  splittedText('.section-business', () => fadeIn('.section-business--agency'));
 });
 </script>
 

@@ -7,5 +7,5 @@ import SectionStatistic from './sections/SectionStatistic.vue';
 <template>
   <SectionHeader />
   <SectionBusiness />
-  <!-- <SectionStatistic /> -->
+  <SectionStatistic />
 </template>

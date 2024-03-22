@@ -1,5 +1,5 @@
 <script setup>
-import { usePageReady } from '@/composables/useWindowLoad';
+import { usePageReady } from '@/composable/useWindowLoad';
 const { currentProgress } = usePageReady();
 </script>
 
