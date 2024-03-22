@@ -4,14 +4,25 @@ import CompanyLogoMini from './CompanyLogoMini.vue';
 import HeroCarousel from './HeroCarousel.vue';
 import CompanyLogo from './CompanyLogo.vue';
 import { gsap } from 'gsap';
+import { useScrollController } from '@/composable/useScrollController';
+
+const { hideScroll, showScroll } = useScrollController();
 
 const tl = gsap.timeline({
   defaults: { delay: 2 },
 });
 onMounted(() => {
-  tl.add('start')
-    .to('.scene-opener', { y: '-100%', duration: 1.5 }, 'start')
-    .from('.hero-appears', { y: '20%', opacity: 0, duration: 1.5 }, 'start');
+  hideScroll();
+  tl.add('start').to('.scene-opener', { y: '-100%', duration: 1.5 }, 'start').from(
+    '.hero-appears',
+    {
+      y: '20%',
+      opacity: 0,
+      duration: 1.5,
+      onComplete: showScroll,
+    },
+    'start',
+  );
 });
 </script>
 
