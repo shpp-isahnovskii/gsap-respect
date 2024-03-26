@@ -20,6 +20,7 @@ onMounted(() => {
         trigger: '.section-analytics--paragraph',
         start: 'top 50%',
         end: 'top 50%',
+        once: true,
       },
       height: '20',
       stagger: 0.05,

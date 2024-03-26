@@ -14,7 +14,7 @@ onMounted(() => {
 
 <template>
   <section class="w-full h-[90vh] bg-primary relative flex flex-col justify-between">
-    <div class="section-business text-[7rem]/[6.5rem] text-right max-w-[54rem] ml-auto pt-24">
+    <div class="section-business text-[7rem]/[6.5rem] text-right max-w-[54rem] ml-auto pt-24 pr-3">
       Growing businesses by building relationships
     </div>
     <div class="section-business--agency max-w-64 p-3 pb-5 opacity-0">

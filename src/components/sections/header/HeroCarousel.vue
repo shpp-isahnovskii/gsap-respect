@@ -24,6 +24,7 @@ onMounted(() => {
       start: 'top top',
       pin: true,
       pinSpacing: false,
+      once,
     },
   });
   gsap.to('.scroll-fading-hero', {
@@ -39,7 +40,7 @@ onMounted(() => {
 const imagesArray = [heroImageFour, heroImageThree, heroImageTwo, heroImageOne];
 </script>
 <template>
-  <div class="pinned-hero">
+  <div class="pinned-hero w-full">
     <div class="scroll-fading-hero">
       <img
         v-for="(image, index) in imagesArray"
