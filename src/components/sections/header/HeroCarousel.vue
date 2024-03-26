@@ -24,7 +24,6 @@ onMounted(() => {
       start: 'top top',
       pin: true,
       pinSpacing: false,
-      once,
     },
   });
   gsap.to('.scroll-fading-hero', {
