@@ -6,8 +6,10 @@ import { onMounted } from 'vue';
 
 const props = defineProps(['isActive']);
 
+const tl = gsap.timeline();
 onMounted(() => {
-  
+  tl.to('.lead-gen-card', {right: '0', duration: 1})
+  tl.pause();
 })
 
 const cardText = {
@@ -23,9 +25,10 @@ const cardText = {
 </script>
 <template>
   <BusinessCard
-    class="bg-black text-white absolute top-0 w-full left-full"
+    class="lead-gen-card bg-black text-white absolute top-0 -right-[20vw]"
     :card="{ index: 2, ...cardText }"
-    @focus-in="$emit('focusIn')"
+    @focus-in="$emit('focusIn'), tl.play()"
+    @focus-out="tl.reverse()"
     :is-active="props.isActive"
     animation-name="lead-generation-card"
   >
