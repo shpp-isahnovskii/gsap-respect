@@ -42,7 +42,7 @@ onMounted(() => {
         <li><a href="#">Contacts</a></li>
       </ul>
       <button
-        class="flex col-span-3 w-[250px] ml-auto h-12 bg-black text-primary justify-end pr-3 items-center before:content-[url('./assets/images/icons/arrowRightIcon.svg')] before:flex before:w-6 before:h-5 before:mr-16"
+        class="btn-primary--header col-span-3 ml-auto"
       >
         Book a call
       </button>

@@ -14,4 +14,37 @@
   body {
     @apply bg-black;
   }
+  h1 {
+    @apply typo-h1;
+  }
+
+  h2 {
+      @apply typo-h2;
+  }
+
+  h3 {
+      @apply typo-h3;
+  }
+}
+
+@layer components {
+  .typo-h1 {
+    @apply text-[7rem]/[6.5rem];
+  }
+  .typo-h2 {
+    @apply text-7xl;
+  }
+  .typo-h3 {
+    @apply text-6xl;
+  }
+  /* buttons */
+  .btn-primary {
+    @apply flex flex-row justify-center items-center w-max whitespace-nowrap h-10 px-5 bg-black text-primary before:text-primary before:content-['\2192'] before:font-['Arial'] before:text-xl before:mr-10 before:mb-[2px];
+  }
+  .btn-primary--header {
+    @apply btn-primary min-w-[16rem] justify-end before:mr-16;
+  }
+  .btn-secondary {
+    @apply btn-primary bg-primary text-black before:text-black;
+  }
 }

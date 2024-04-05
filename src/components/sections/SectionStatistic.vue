@@ -13,19 +13,16 @@ onMounted(() => {
   gsap.set('.section-analytics--paragraph', { opacity: 0 });
 
   splittedText('.section-analytics--header-text', () => fadeIn('.section-analytics--paragraph'));
-  gsap.from(
-    '.graph-column',
-    {
-      scrollTrigger: {
-        trigger: '.section-analytics--paragraph',
-        start: 'top 50%',
-        end: 'top 50%',
-        once: true,
-      },
-      height: '20',
-      stagger: 0.05,
+  gsap.from('.graph-column', {
+    scrollTrigger: {
+      trigger: '.section-analytics--paragraph',
+      start: 'top 50%',
+      end: 'top 50%',
+      once: true,
     },
-  );
+    height: '20',
+    stagger: 0.05,
+  });
 });
 
 const graph = [27, 43, 51, 42, 31, 48, 59, 63, 55, 63, 71, 76, 67, 91];
@@ -33,7 +30,7 @@ const graph = [27, 43, 51, 42, 31, 48, 59, 63, 55, 63, 71, 76, 67, 91];
 
 <template>
   <section class="relative h-screen w-full bg-white pt-20">
-    <h3 class="section-analytics--header-text text-6xl max-w-[1000px] px-2">
+    <h3 class="section-analytics--header-text max-w-[1000px] px-2">
       Consistent leads flow to streamline Your business growth.
     </h3>
     <p class="section-analytics--paragraph px-2 pt-8 max-w-[450px]">
@@ -41,13 +38,11 @@ const graph = [27, 43, 51, 42, 31, 48, 59, 63, 55, 63, 71, 76, 67, 91];
       business value.
     </p>
     <div class="absolute w-full bottom-0 flex flex-row gap-[1px] justify-around items-end px-2">
-      <div
-        v-for="(value, index) in graph"
-        :key="index"
-        class="graph-column relative w-full bg-primary"
-        :style="{ height: (graphMaxHeight / 100) * value + 'px' }"
-      >
-        <div class="text-primary bg-white text-sm text-center">{{ value }}</div>
+      <div v-for="(value, index) in graph" :key="index" class="w-full">
+        <div class="text-primary text-sm text-center">{{ value }}</div>
+        <div
+          class="graph-column relative w-full bg-primary"
+          :style="{ height: (graphMaxHeight / 100) * value + 'px' }" />
       </div>
     </div>
   </section>
