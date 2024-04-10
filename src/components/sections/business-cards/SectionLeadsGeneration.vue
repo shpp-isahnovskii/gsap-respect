@@ -17,7 +17,7 @@ const resetActivePage = (pageIndex) => {
 </script>
 
 <template>
-  <section class="bg-white h-screen px-3 overflow-hidden w-screen relative">
+  <section class="bg-white h-[80vh] px-3 overflow-hidden w-screen relative">
     <component
       v-for="page in pages"
       :key="page.index"

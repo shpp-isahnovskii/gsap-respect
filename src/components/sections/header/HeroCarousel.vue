@@ -1,10 +1,10 @@
 <script setup>
 import { onMounted } from 'vue';
 import { gsap } from 'gsap';
-import heroImageOne from '@/assets/images/heroImageOne.webp';
-import heroImageTwo from '@/assets/images/heroImageTwo.webp';
-import heroImageThree from '@/assets/images/heroImageThree.webp';
-import heroImageFour from '@/assets/images/heroImageFour.webp';
+import heroImageOne from '@/assets/images/hero/heroImageOne.webp';
+import heroImageTwo from '@/assets/images/hero/heroImageTwo.webp';
+import heroImageThree from '@/assets/images/hero/heroImageThree.webp';
+import heroImageFour from '@/assets/images/hero/heroImageFour.webp';
 
 const tl = gsap.timeline({ repeat: -1, repeatDelay: 1, delay: 1 });
 

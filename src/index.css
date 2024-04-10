@@ -47,4 +47,7 @@
   .btn-secondary {
     @apply btn-primary bg-primary text-black before:text-black;
   }
+  .btn-form-apply {
+    @apply bg-transparent after:content-['\2192'] after:font-['Arial'] after:text-xl;
+  }
 }

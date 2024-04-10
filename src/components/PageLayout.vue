@@ -3,8 +3,9 @@ import SectionHeader from './sections/header/SectionHeader.vue';
 import SectionBusiness from './sections/SectionBusiness.vue';
 import SectionStatistic from './sections/SectionStatistic.vue';
 import SectionPartners from './sections/SectionPartners.vue';
-import SectionLeadsGeneration from './sections/business-to-business/SectionLeadsGeneration.vue';
-import SectionChooseUs from './sections/SectionChooseUs.vue';
+import SectionLeadsGeneration from './sections/business-cards/SectionLeadsGeneration.vue';
+import SectionChooseUs from './sections/choose-us/SectionChooseUs.vue';
+import SectionFightWithUs from './sections/SectionFightWithUs.vue';
 </script>
 
 <template>
@@ -14,4 +15,5 @@ import SectionChooseUs from './sections/SectionChooseUs.vue';
   <SectionPartners />
   <SectionLeadsGeneration />
   <SectionChooseUs />
+  <SectionFightWithUs />
 </template>
