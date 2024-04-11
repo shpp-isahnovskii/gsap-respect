@@ -1,14 +1,21 @@
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, watch } from 'vue';
 import CompanyLogoMini from './CompanyLogoMini.vue';
 import HeroCarousel from './HeroCarousel.vue';
 import CompanyLogo from './CompanyLogo.vue';
+import { usePageReady } from '@/composable/useWindowLoad';
 import { gsap } from 'gsap';
 
+const { isReady } = usePageReady();
 const tl = gsap.timeline();
+
+watch(() => isReady.value, (isReady) => {
+  if (isReady) {
+    tl.play();
+  }
+});
 onMounted(() => {
   tl.add('start')
-    .set(document.body, { overflow: 'hidden' })
     .to('.scene-opener', { y: '-100%', duration: 1.5, delay: 2 }, 'start')
     .from(
       '.hero-appears',
@@ -20,7 +27,8 @@ onMounted(() => {
       },
       'start',
     )
-    .set(document.body, { overflowY: 'auto' });
+    .set(document.body, { overflowY: 'auto' })
+    .pause();
 });
 </script>
 
@@ -41,11 +49,7 @@ onMounted(() => {
         <li><a href="#">We're hiring</a></li>
         <li><a href="#">Contacts</a></li>
       </ul>
-      <button
-        class="btn-primary--header col-span-3 ml-auto"
-      >
-        Book a call
-      </button>
+      <button class="btn-primary--header col-span-3 ml-auto">Book a call</button>
     </nav>
   </header>
 </template>
