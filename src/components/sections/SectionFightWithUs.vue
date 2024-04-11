@@ -14,15 +14,11 @@ onMounted(() => {
   gsap.set(['.lead-companies', '.header-text--leads'], { opacity: 0 });
   gsap.set('.generated-lead--border', { height: 0 });
   
-  splittedText('.header-text--fight-cold', () => {
-    fadeIn('.header-text--leads');
-  }, {end: 'bottom 60%'});
-
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.lead-companies',
-      start: 'top 70%',
-      end: 'top 70%',
+      start: 'top 80%',
+      end: 'top 80%',
       once: true,
     },
   });
@@ -35,6 +31,12 @@ onMounted(() => {
     stagger: 0.1,
     height: '100%',
   }, '<');
+  tl.pause();
+
+  splittedText('.header-text--fight-cold', () => {
+    fadeIn('.header-text--leads', {delay: 0});
+    tl.play();
+  }, {end: 'bottom 65%'});
 });
 
 const images = [

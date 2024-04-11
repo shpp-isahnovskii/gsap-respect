@@ -1,8 +1,8 @@
 import { gsap } from 'gsap';
 
-export const fadeIn = (node) => {
+export const fadeIn = (node, options = { delay: 0.5 }) => {
   gsap.to(node, {
-    delay: 0.5,
+    delay: options.delay,
     opacity: 1,
     duration: 1,
   });
