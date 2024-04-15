@@ -80,7 +80,7 @@ const stats = [
 </script>
 
 <template>
-  <section class="flex flex-col gap-y-[1px] h-screen bg-white px-2">
+  <section class="flex flex-col gap-y-[1px] h-[80vh] bg-white px-2">
     <div
       v-for="(stat, index) in stats"
       :key="index"

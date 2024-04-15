@@ -9,11 +9,14 @@ import { gsap } from 'gsap';
 const { isReady } = usePageReady();
 const tl = gsap.timeline();
 
-watch(() => isReady.value, (isReady) => {
-  if (isReady) {
-    tl.play();
-  }
-});
+watch(
+  () => isReady.value,
+  (isReady) => {
+    if (isReady) {
+      tl.play();
+    }
+  },
+);
 onMounted(() => {
   tl.add('start')
     .to('.scene-opener', { y: '-100%', duration: 1.5, delay: 2 }, 'start')
@@ -33,8 +36,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <header class="relative">
-    <div class="scene-opener fixed w-full h-screen bg-black z-[9]" />
+  <header class="relative page-header">
+    <div class="scene-opener fixed w-full h-screen bg-black z-30" />
     <CompanyLogo />
     <HeroCarousel class="hero-appears h-[90vh]" />
     <nav class="nav-section relative h-[10vh] bg-primary p-3 grid grid-cols-12 justify-stretch">

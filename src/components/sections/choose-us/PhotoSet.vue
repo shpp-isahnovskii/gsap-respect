@@ -20,7 +20,7 @@ const imageSet = [
   },
   {
     img: imageThree,
-    zIndex: 'z-30',
+    zIndex: 'z-[21]',
   },
 ];
 
@@ -31,7 +31,7 @@ onMounted(() => {
     scrollTrigger: {
       trigger: '.team-image-set',
       start: 'top 50%',
-      ease: "power1.inOut"
+      ease: 'power1.inOut',
     },
     duration: 1,
   });
@@ -39,7 +39,7 @@ onMounted(() => {
 </script>
 <template>
   <div class="flex justify-start">
-    <div class="team-image-set relative w-[43rem] h-full flex items-center justify-center" >
+    <div class="team-image-set relative w-[43rem] h-full flex items-center justify-center">
       <div
         v-for="(item, index) in imageSet"
         :key="index"
@@ -47,7 +47,7 @@ onMounted(() => {
         class="h-auto w-72 overflow-hidden"
         :class="[index !== 2 && `${item.x} ${item.y} absolute`, item.zIndex]"
       >
-        <img :src="item.img" class="team-img" alt="team photo" />
+        <img :src="item.img" class="team-img" alt="team photo" width="288" height="393" />
       </div>
     </div>
   </div>

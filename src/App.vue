@@ -1,19 +1,21 @@
 <script setup>
 import PagePreloader from './components/PagePreloader.vue';
 import PageLayout from './components/PageLayout.vue';
-import { usePageReady } from '@/composable/useWindowLoad';
+import { usePageReset } from '@/composable/usePageReset.js';
 import { gsap, ScrollTrigger } from 'gsap/all';
 import { onMounted } from 'vue';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const { scrollReset } = usePageReset();
+scrollReset();
+
 onMounted(() => {
   gsap.set(document.body, { overflow: 'hidden' });
 });
-
-const { isReady } = usePageReady();
 </script>
 
 <template>
-  <PagePreloader v-if="!isReady" />
-  <PageLayout v-show="isReady" />
+  <PagePreloader />
+  <PageLayout />
 </template>

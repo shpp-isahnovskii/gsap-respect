@@ -33,7 +33,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-show="isReady" class="relative [&>*]:absolute flex flex-col text-6xl text-primary z-10">
+  <div v-show="isReady" class="relative [&>*]:absolute flex flex-col text-6xl text-primary z-40">
     <div class="title-respect">Respect</div>
     <div class="title-dot top-4">.</div>
     <div class="title-studio rotate-90 w-fit -left-12 top-[7.5rem]">Studio</div>

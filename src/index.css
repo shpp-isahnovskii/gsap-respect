@@ -6,7 +6,9 @@
 @layer base {
   @font-face {
     font-family: 'SuisseIntl';
-    src: url('./assets/fonts/SuisseIntl-Regular.woff');
+    font-style: normal;
+    font-weight: 400;
+    src: local('Arial'), url('./assets/fonts/SuisseIntl-Regular.woff');
   }
   html {
     @apply font-suisseIntl text-black;
