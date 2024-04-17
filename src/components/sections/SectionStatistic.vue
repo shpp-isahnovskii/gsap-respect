@@ -30,9 +30,9 @@ const graph = [27, 43, 51, 42, 31, 48, 59, 63, 55, 63, 71, 76, 67, 91];
 
 <template>
   <section class="relative h-screen w-full bg-white pt-20">
-    <h3 class="section-analytics--header-text max-w-[1000px] px-2">
+    <h2 class="section-analytics--header-text text-6xl max-w-[1000px] px-2">
       Consistent leads flow to streamline Your business growth.
-    </h3>
+    </h2>
     <p class="section-analytics--paragraph px-2 pt-8 max-w-[450px]">
       We combine disruptive marketing techniques with proven tech solutions to provide maximum
       business value.

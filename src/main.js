@@ -1,5 +1,8 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+import imageUrlPlugin from './plugins/imageUrlPlugin';
 import './index.css';
 
-createApp(App).mount('#app');
+createApp(App)
+  .use(imageUrlPlugin)
+  .mount('#app');

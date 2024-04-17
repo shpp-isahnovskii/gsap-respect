@@ -48,7 +48,7 @@ onMounted(() => {
           class="ml-8 basis-[80%] placeholder-primary outline-0 pr-2"
           placeholder="Hey! Type your name here"
         />
-        <button type="submit" class="btn-form-apply mr-2" />
+        <button type="submit" class="btn-form-apply mr-2" aria-label="Submit form" />
       </form>
       <hr class="input-name-hr border-primary" />
     </div>

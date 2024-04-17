@@ -39,7 +39,7 @@ onMounted(() => {
   <header class="relative page-header">
     <div class="scene-opener fixed w-full h-screen bg-black z-30" />
     <CompanyLogo />
-    <HeroCarousel class="hero-appears h-[90vh]" />
+    <HeroCarousel class="hero-appears max-h-[90vh]" />
     <nav class="nav-section relative h-[10vh] bg-primary p-3 grid grid-cols-12 justify-stretch">
       <CompanyLogoMini class="absolute col-start-1 col-end-3" />
       <ul class="flex justify-between col-start-3 col-end-7 mt-3">
