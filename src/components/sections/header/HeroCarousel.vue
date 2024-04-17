@@ -32,7 +32,7 @@ onMounted(() => {
   });
 });
 
-const baseURL = '/src/assets/images/hero';
+const folder = 'hero';
 const imgNames = ['heroImageFour', 'heroImageThree', 'heroImageTwo', 'heroImageOne'];
 
 </script>
@@ -41,20 +41,20 @@ const imgNames = ['heroImageFour', 'heroImageThree', 'heroImageTwo', 'heroImageO
     <div class="scroll-fading-hero">
       <picture v-for="(name, index) in imgNames">
         <source
-          :srcset="$getImageURL(baseURL, 'lg', name)"
+          :srcset="$getImageURL(folder, name, 'lg')"
           media="(min-width: 1366px)"
           width="1366"
           height="800"
         />
         <source
-          :srcset="$getImageURL(baseURL, 'md', name)"
+          :srcset="$getImageURL(folder, name, 'md')"
           media="(min-width: 768px)"
           width="768"
           height="800"
         />
         <img
           :key="index"
-          :src="$getImageURL(baseURL, 'xs', name)"
+          :src="$getImageURL(folder, name, 'xs')"
           :class="[{ absolute: index !== 0 }, 'hero-img h-auto w-full object-cover top-0']"
           :alt="`hero image, slide ${index}`"
         />

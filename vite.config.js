@@ -5,11 +5,9 @@ import vue from '@vitejs/plugin-vue';
 import { compression } from 'vite-plugin-compression2';
 import { analyzer } from 'vite-bundle-analyzer';
 
-const ASSET_URL = process.env.NODE_ENV === 'development' ? '/' : `/gsap-respect/`;
-
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: ASSET_URL,
+  base: process.env.VITE_BASE_PATH,
   plugins: [vue(), compression(), analyzer({analyzerMode: 'server', analyzerPort: '8888'})],
   resolve: {
     alias: {
