@@ -1,35 +1,33 @@
-# vue-gsap-respect-studio
+# GSAP Respect
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a portfolio page created using the GSAP animation library.
 
-## Recommended IDE Setup
+## Tech Stack:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- Vue 3
+- Vite
+- Tailwind
+- GSAP
 
-## Customize configuration
+## Page Link:
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+You can view the page [here](https://shpp-isahnovskii.github.io/gsap-respect/).
 
-## Project Setup
+## Project Setup:
 
+### Install dependencies
 ```sh
-npm install
+yarn install
 ```
-
 ### Compile and Hot-Reload for Development
-
 ```sh
-npm run dev
+yarn run dev
 ```
-
 ### Compile and Minify for Production
-
 ```sh
-npm run build
+yarn run build
 ```
-
-### Lint with [ESLint](https://eslint.org/)
-
+### Deploy to GitHub Pages
 ```sh
-npm run lint
+yarn run deploy
 ```
