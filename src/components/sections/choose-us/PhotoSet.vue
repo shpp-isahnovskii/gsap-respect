@@ -39,12 +39,12 @@ onMounted(() => {
 </script>
 <template>
   <div class="flex justify-start">
-    <div class="team-image-set relative w-[43rem] h-full flex items-center justify-center">
+    <div class="team-image-set relative w-full sm:w-[43rem] h-[20rem] sm:h-full flex items-center justify-center">
       <div
         v-for="(item, index) in imageSet"
         :key="index"
         :src="item.img"
-        class="h-auto w-72 overflow-hidden"
+        class="h-auto w-48 sm:w-72 overflow-hidden"
         :class="[index !== 2 && `${item.x} ${item.y} absolute`, item.zIndex]"
       >
         <img :src="item.img" class="team-img" alt="team photo" width="288" height="393" />

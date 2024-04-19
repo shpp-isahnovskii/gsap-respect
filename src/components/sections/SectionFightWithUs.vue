@@ -63,18 +63,18 @@ const images = [
 ];
 </script>
 <template>
-  <section class="bg-white h-[70vh] px-2">
-    <h2 class="header-text--fight-cold pb-14">Let's fight cold <span v-text="'together'" class="text-primary" /></h2>
-    <div class="header-text--leads max-w-[13rem] mb-24">We generated leads from top-performing companies</div>
+  <section class="bg-white pb-2 px-2 pt-4 sm:tp-0">
+    <h2 class="header-text--fight-cold pb-4 sm:pb-14">Let's fight cold <span v-text="'together'" class="text-primary" /></h2>
+    <div class="header-text--leads max-w-[13rem] mb-12 sm:mb-24">We generated leads from top-performing companies</div>
     <div
-      class="lead-companies flex flex-row justify-around items-top border-y-[1px] border-primary h-40"
+      class="lead-companies flex flex-row justify-around items-top border-y-[1px] border-primary h-20 sm:h-40"
     >
       <div v-for="(image, index) in images" class="relative w-[20%]">
         <img
           :key="index"
           :src="image.src"
           :alt="image.alt"
-          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 sm:w-auto"
         />
         <div
           class="generated-lead--border h-full"

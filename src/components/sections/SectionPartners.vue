@@ -44,7 +44,7 @@ onMounted(() => {
     gsap.to('.trusted-lt--lines', {
       width: '100%',
       duration: 1,
-      scrollTrigger: { trigger: '.trusted-lt', start: 'top 80%', once: true, },
+      scrollTrigger: { trigger: '.trusted-lt', start: 'top 80%', once: true },
     });
     /* bottom text annotations */
     gsap.set(splittedText.chars, { opacity: 0 });
@@ -64,43 +64,42 @@ onMounted(() => {
   });
 });
 const stats = [
-  { title: 'Revenue generated for clients', score: '1570', options: { justify: 'justify-end' } },
+  { title: 'Revenue generated for clients', score: '1570', style: 'justify-end' },
   {
     title: 'Conversations opened',
     score: '1200',
-    options: { justify: 'justify-center', ml: 'ml-[30%]' },
+    style: 'justify-center ml-[30%]',
   },
-  { title: 'Leads generated via targeted', score: '378' },
+  { title: 'Leads generated via targeted', score: '378', style: 'sm:justify-center justify-end' },
   {
     title: 'Calls scheduled for clients',
     score: '197',
-    options: { justify: 'justify-center', ml: 'ml-[50%]' },
+    style: 'justify-center ml-[40%] sm:ml-[50%]',
   },
 ];
 </script>
 
 <template>
-  <section class="flex flex-col gap-y-[1px] h-[80vh] bg-white px-2">
+  <section class="flex flex-col gap-y-[1px] bg-white px-2 pb-8 sm:pb-0">
     <div
       v-for="(stat, index) in stats"
       :key="index"
-      class="partners-graph flex items-top h-20 text-primary bg-black w-auto"
-      :class="[
-        stat?.options?.justify && stat.options.justify,
-        stat?.options?.ml && stat.options.ml,
-      ]"
+      class="partners-graph flex items-top h-14 sm:h-20 text-primary bg-black w-auto"
+      :class="stat.style"
     >
-      <span class="text-md text-right w-40 ml-1 mr-3">{{ stat.title }}</span>
-      <span class="text-7xl mr-4">{{ stat.score }}</span>
+      <span class="sm:text-base text-sm text-right mt-[2px] sm:mt-0 sm:w-40 ml-1 mr-3">{{
+        stat.title
+      }}</span>
+      <span class="text-5xl sm:text-7xl mr-4">{{ stat.score }}</span>
     </div>
-    <div class="flex flex-col w-full items-start text-primary">
-      <hr class="trusted-lt--lines border-t-2 border-primary mt-16 mb-2 opacity-50" />
-      <h3 class="trusted-lt text-8xl">Trusted long-term partner</h3>
-      <span class="trusted-lt--bottom-section text-3xl max-w-96 self-end mt-3"
+    <div class="flex flex-col w-full items-start text-primary mt-14 sm:mt-0">
+      <hr class="trusted-lt--lines border-t-2 border-primary sm:mt-16 mb-2 opacity-50" />
+      <h3 class="trusted-lt text-4xl sm:text-8xl">Trusted long-term partner</h3>
+      <span class="trusted-lt--bottom-section text-xl sm:text-3xl max-w-96 self-end mt-6 sm:mt-3"
         >For leading B2B tech and service companies</span
       >
-      <hr class="trusted-lt--lines border-t-2 border-primary mt-6 opacity-50" />
-      <p class="trusted-lt--annotation text-lg mt-10">
+      <hr class="trusted-lt--lines border-t-2 border-primary mt-2 sm:mt-6 opacity-50" />
+      <p class="trusted-lt--annotation text-base sm:text-lg mt-4 sm:mt-10 mb-4">
         We combine disruptive marketing techniques with proven tech solutions to provide maximum
         business value.
       </p>

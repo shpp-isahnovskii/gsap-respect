@@ -25,13 +25,13 @@ onMounted(() => {
 </script>
 <template>
   <div class="flex flex-col items-end">
-    <h3 class="service-to-choose--header w-7/12 text-end mb-14">
+    <h3 class="service-to-choose--header w-7/12 text-end mt-2 sm:mt-0 mb-4 sm:mb-14">
       Still not sure what service to choose?
     </h3>
-    <p class="paragraph-qualification w-4/12 text-end mb-4">
+    <p class="paragraph-qualification w-10/12 sm:w-4/12 text-end mb-4">
       Fill our qualification form to understand which service fits your business needs
     </p>
-    <div class="w-8/12 mt-auto">
+    <div class="w-full sm:w-8/12 mt-10 sm:mt-auto">
       <hr class="input-name-hr border-primary" />
       <form
         @submit.prevent="
@@ -41,7 +41,7 @@ onMounted(() => {
         "
         class="input-name-here py-5 text-primary flex items-center"
       >
-        <span class="min-w-6">1<sup class="ml-1 text-[0.65rem]/[20px]" v-text="'/ 5'" /></span>
+        <span class="min-w-[26px]">1<sup class="ml-1 text-[0.65rem]/[20px]" v-text="'/ 5'" /></span>
         <input
           v-model="input"
           type="text"
