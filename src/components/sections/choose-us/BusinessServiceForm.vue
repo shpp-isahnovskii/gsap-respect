@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue';
-import { splittedText } from '@/animations/splittedText';
+import { showCharsByScrolling } from '@/animations/fadeInCharArray';
 import { fadeIn } from '@/animations/fadeIn';
 import { gsap } from 'gsap';
 
@@ -15,7 +15,7 @@ onMounted(() => {
   gsap.set(['.paragraph-qualification', '.input-name-here', '.input-name-hr'], { opacity: 0 });
   gsap.set('.input-name-hr', { width: '50%' });
 
-  splittedText('.service-to-choose--header', () => {
+  showCharsByScrolling('.service-to-choose--header', () => {
     const ctx = gsap.context(() => {
       showLines();
       fadeIn(['.paragraph-qualification', '.input-name-here']);

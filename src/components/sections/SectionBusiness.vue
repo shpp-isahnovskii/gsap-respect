@@ -3,7 +3,7 @@ import { onMounted } from 'vue';
 import { gsap } from 'gsap';
 import BookACallBtn from '@/components/common/BookACallBtn.vue';
 import HiringAndContacts from '@/components/common/HiringAndContacts.vue';
-import { splittedText } from '@/animations/splittedText';
+import { showCharsByScrolling, showCharsByTrigger } from '@/animations/fadeInCharArray';
 import { fadeIn } from '@/animations/fadeIn';
 import { useMobileDevice } from '@/composable/useMobileDevice';
 
@@ -12,13 +12,18 @@ const { isMobile } = useMobileDevice();
 onMounted(() => {
   /* preset */
   gsap.set('.section-analytics--paragraph', { opacity: 0 });
-
-  splittedText('.section-business', () => fadeIn('.section-business--agency'));
+  if (isMobile) {
+    showCharsByTrigger('.section-business', () => fadeIn('.section-business--agency'));
+    return;
+  }
+  showCharsByScrolling('.section-business', () => fadeIn('.section-business--agency'));
 });
 </script>
 
 <template>
-  <section class="w-full sm:h-[90vh] bg-primary relative flex flex-col justify-between px-2">
+  <section
+    class="w-full sm:h-[calc(100vh-68px)] bg-primary relative flex flex-col justify-between px-2"
+  >
     <h1 class="section-business text-right max-w-[14rem] sm:max-w-[54rem] ml-auto sm:pt-24 sm:pr-3">
       Growing businesses by building relationships
     </h1>

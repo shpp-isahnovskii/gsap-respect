@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted } from 'vue';
 import { gsap } from 'gsap';
-import { splittedText } from '@/animations/splittedText';
+import { showCharsByScrolling } from '@/animations/fadeInCharArray';
 import { fadeIn } from '@/animations/fadeIn';
 import bayer from '@/assets/images/brands/bayer.svg';
 import salesforce from '@/assets/images/brands/salesforce.svg';
@@ -33,7 +33,7 @@ onMounted(() => {
   }, '<');
   tl.pause();
 
-  splittedText('.header-text--fight-cold', () => {
+  showCharsByScrolling('.header-text--fight-cold', () => {
     fadeIn('.header-text--leads', {delay: 0});
     tl.play();
   }, {end: 'bottom 65%'});

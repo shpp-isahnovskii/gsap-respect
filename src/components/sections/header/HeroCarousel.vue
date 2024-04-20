@@ -37,7 +37,7 @@ const imgNames = ['heroImageFour', 'heroImageThree', 'heroImageTwo', 'heroImageO
 
 </script>
 <template>
-  <div class="pinned-hero w-full">
+  <div class="pinned-hero w-full h-[calc(100vh-68px)]">
     <div class="scroll-fading-hero">
       <picture v-for="(name, index) in imgNames">
         <source
@@ -55,7 +55,7 @@ const imgNames = ['heroImageFour', 'heroImageThree', 'heroImageTwo', 'heroImageO
         <img
           :key="index"
           :src="$getImageURL(folder, name, 'xs')"
-          :class="[{ absolute: index !== 0 }, 'hero-img h-auto w-full object-cover top-0']"
+          :class="[{ absolute: index !== 0 }, 'hero-img h-[49vh] sm:h-auto w-full object-cover top-0']"
           :alt="`hero image, slide ${index}`"
         />
       </picture>

@@ -2,7 +2,7 @@
 import { gsap } from 'gsap';
 import { computed, onMounted } from 'vue';
 import { useWindowResize } from '@/composable/useWindowResize';
-import { splittedText } from '@/animations/splittedText';
+import { showCharsByScrolling } from '@/animations/fadeInCharArray';
 import { fadeIn } from '@/animations/fadeIn';
 
 const { height, width } = useWindowResize();
@@ -12,7 +12,7 @@ onMounted(() => {
   /* preset */
   gsap.set('.section-analytics--paragraph', { opacity: 0 });
 
-  splittedText('.section-analytics--header-text', () => fadeIn('.section-analytics--paragraph'));
+  showCharsByScrolling('.section-analytics--header-text', () => fadeIn('.section-analytics--paragraph'));
   gsap.from('.graph-column', {
     scrollTrigger: {
       trigger: '.section-analytics--paragraph',
