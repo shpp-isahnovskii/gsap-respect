@@ -40,14 +40,14 @@ onMounted(() => {
 </script>
 
 <template>
-  <header class="relative page-header h-[49vh] sm:h-screen">
+  <header class="relative page-header h-[49svh] sm:h-screen">
     <div class="scene-opener fixed w-full h-screen bg-black z-30" />
     <CompanyLogo />
-    <HeroCarousel class="hero-appears" />
-    <nav class="nav-section h-[68px] relative bg-primary p-3 grid sm:grid-cols-12 justify-stretch">
-      <CompanyLogoMini class="absolute col-start-1 col-end-2" />
+    <HeroCarousel class="hero-appears h-[calc(49vh-60px)] sm:h-[calc(100vh-60px)]" />
+    <nav class="nav-section flex h-[60px] relative bg-primary p-3">
+      <CompanyLogoMini class="absolute" />
       <ul
-        class="flex justify-between h-min col-start-2 col-end-10 sm:col-end-6 sm:mt-3 [&>*]:underline sm:[&>*]:no-underline"
+        class="flex justify-end w-full sm:w-auto sm:min-w-min sm:mt-[2px] sm:items-center [&>*]:ml-3 sm:[&>*]:ml-12 [&>*]:underline sm:[&>*]:no-underline"
       >
         <li><a href="#">Services</a></li>
         <li><a href="#">Case Studies</a></li>
@@ -55,8 +55,8 @@ onMounted(() => {
         <li><a href="#">About us</a></li>
       </ul>
       <template v-if="!isMobile">
-        <HiringAndContacts class="md:col-start-8 md:col-end-10" />
-        <BookACallBtn class="col-start-11 col-end-12" />
+        <HiringAndContacts class="[&>*]:mr-12 ml-auto mt-[2px]" />
+        <BookACallBtn />
       </template>
     </nav>
   </header>

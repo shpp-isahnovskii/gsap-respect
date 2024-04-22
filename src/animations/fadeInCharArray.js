@@ -4,7 +4,7 @@ import SplitType from 'split-type';
 export const showCharsByScrolling = (
   text,
   onCompleteCallback = () => {},
-  options = { end: 'bottom 40%' },
+  options = {},
 ) => {
   const splittedText = new SplitType(text, { types: 'chars, lines' });
 
@@ -14,10 +14,11 @@ export const showCharsByScrolling = (
     {
       scrollTrigger: {
         trigger: splittedText.lines,
-        start: 'top 80%',
+        start: options.start || 'top 80%',
         end: options.end || 'bottom 40%',
         scrub: true,
         once: true,
+        markers: options.markers || false,
       },
       onComplete: () => onCompleteCallback(),
       opacity: 1,

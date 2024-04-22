@@ -20,7 +20,7 @@ onMounted(() => {
       showLines();
       fadeIn(['.paragraph-qualification', '.input-name-here']);
     });
-  });
+  }, {start: 'bottom bottom', end: '+=150'});
 });
 </script>
 <template>

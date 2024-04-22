@@ -42,7 +42,7 @@ const cardText = {
 </script>
 <template>
   <BusinessCard
-    class="lead-gen-card bg-black text-white top-16 left-0 right-3 sm:left-auto sm:ml-0 absolute sm:top-0 sm:-right-[20vw]"
+    class="lead-gen-card bg-black text-white top-16 left-3 right-6 sm:left-auto sm:ml-0 absolute sm:top-0 sm:-right-[20vw]"
     :class="{ 'z-20' : !isMobile }"
     :card="{ index: 2, ...cardText }"
     @focus-in="$emit('focusIn'), tl.play()"

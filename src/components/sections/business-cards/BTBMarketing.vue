@@ -15,7 +15,7 @@ const cardText = {
 </script>
 <template>
   <BusinessCard
-    class="bg-primary text-white sm:w-max absolute z-10"
+    class="bg-primary text-white mx-3 sm:mx-0 sm:w-max absolute z-10"
     :card="{ index: 1, ...cardText }"
     @focus-in="$emit('focusIn')"
     animation-name="business-to-business"

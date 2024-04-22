@@ -12,6 +12,7 @@ const { isMobile } = useMobileDevice();
 onMounted(() => {
   /* preset */
   gsap.set('.section-analytics--paragraph', { opacity: 0 });
+
   if (isMobile) {
     showCharsByTrigger('.section-business', () => fadeIn('.section-business--agency'));
     return;
@@ -22,13 +23,15 @@ onMounted(() => {
 
 <template>
   <section
-    class="w-full sm:h-[calc(100vh-68px)] bg-primary relative flex flex-col justify-between px-2"
+    class="w-full h-[51svh] sm:h-[calc(100vh-60px)] bg-primary relative flex flex-col justify-between px-2"
   >
-    <h1 class="section-business text-right max-w-[14rem] sm:max-w-[54rem] ml-auto sm:pt-24 sm:pr-3">
+    <h1
+      class="section-business text-right max-w-[14rem] sm:max-w-[54rem] ml-auto mt-auto sm:mt-0 sm:pt-24 sm:pr-3"
+    >
       Growing businesses by building relationships
     </h1>
-    <HiringAndContacts v-if="isMobile" class="max-w-40 ml-auto" />
-    <div class="section-business--agency max-w-64 py-3 sm:p-3 pb-5 opacity-0 mt-4">
+    <HiringAndContacts v-if="isMobile" class="ml-auto [&>*]:ml-3" />
+    <div class="section-business--agency max-w-64 py-3 sm:p-3 pb-2 sm:pb-5 opacity-0 mt-auto">
       B2B Marketing & LinkedIn Lead Generation agency
     </div>
     <BookACallBtn v-if="isMobile" class="mb-2" />

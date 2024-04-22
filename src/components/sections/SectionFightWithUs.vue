@@ -13,30 +13,31 @@ onMounted(() => {
   /* preset */
   gsap.set(['.lead-companies', '.header-text--leads'], { opacity: 0 });
   gsap.set('.generated-lead--border', { height: 0 });
-  
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.lead-companies',
-      start: 'top 80%',
-      end: 'top 80%',
-      once: true,
-    },
-  });
+
+  const tl = gsap.timeline();
 
   tl.to('.lead-companies', {
     opacity: 1,
     duration: 1,
-  }).to('.generated-lead--border', {
-    duration: 1,
-    stagger: 0.1,
-    height: '100%',
-  }, '<');
+  }).to(
+    '.generated-lead--border',
+    {
+      duration: 1,
+      stagger: 0.1,
+      height: '100%',
+    },
+    '<',
+  );
   tl.pause();
 
-  showCharsByScrolling('.header-text--fight-cold', () => {
-    fadeIn('.header-text--leads', {delay: 0});
-    tl.play();
-  }, {end: 'bottom 65%'});
+  showCharsByScrolling(
+    '.header-text--fight-cold',
+    () => {
+      fadeIn('.header-text--leads', { delay: 0 });
+      tl.play();
+    },
+    { start: 'bottom bottom', end: '+=150' },
+  );
 });
 
 const images = [
@@ -64,8 +65,12 @@ const images = [
 </script>
 <template>
   <section class="bg-white pb-2 px-2 pt-4 sm:tp-0">
-    <h2 class="header-text--fight-cold pb-4 sm:pb-14">Let's fight cold <span v-text="'together'" class="text-primary" /></h2>
-    <div class="header-text--leads max-w-[13rem] mb-12 sm:mb-24">We generated leads from top-performing companies</div>
+    <h2 class="header-text--fight-cold pb-4 sm:pb-14">
+      Let's fight cold <span v-text="'together'" class="text-primary" />
+    </h2>
+    <div class="header-text--leads max-w-[13rem] mb-12 sm:mb-24">
+      We generated leads from top-performing companies
+    </div>
     <div
       class="lead-companies flex flex-row justify-around items-top border-y-[1px] border-primary h-20 sm:h-40"
     >
