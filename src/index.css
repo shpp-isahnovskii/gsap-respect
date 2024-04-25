@@ -8,7 +8,8 @@
     font-family: 'SuisseIntl';
     font-style: normal;
     font-weight: 400;
-    src: local('Arial'), url('./assets/fonts/SuisseIntl-Regular.woff');
+    font-display: block;
+    src: local('SuisseIntl'), url('./assets/fonts/SuisseIntl-Regular.woff');
   }
   html {
     @apply font-suisseIntl text-black;
