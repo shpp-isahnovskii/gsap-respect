@@ -10,7 +10,7 @@ import { useMobileDevice } from '@/composable/useMobileDevice';
 import { gsap } from 'gsap';
 
 const { isReady } = usePageReady();
-const { isMobile } = useMobileDevice();
+const { isMobile, isTablet } = useMobileDevice();
 const tl = gsap.timeline();
 
 watch(
@@ -45,9 +45,9 @@ onMounted(() => {
     <CompanyLogo />
     <HeroCarousel class="hero-appears h-[calc(49vh-60px)] sm:h-[calc(100vh-60px)]" />
     <nav class="nav-section flex h-[60px] relative bg-primary p-3">
-      <CompanyLogoMini class="absolute" />
+      <CompanyLogoMini />
       <ul
-        class="flex justify-end w-full sm:w-auto sm:min-w-min sm:mt-[2px] sm:items-center [&>*]:ml-3 sm:[&>*]:ml-12 [&>*]:underline sm:[&>*]:no-underline"
+        class="flex justify-end w-full sm:w-auto sm:min-w-min sm:mt-[2px] sm:items-center [&>*]:ml-3 lg:[&>*]:ml-10 [&>*]:underline underline-offset-2 sm:[&>*]:no-underline"
       >
         <li><a href="#">Services</a></li>
         <li><a href="#">Case Studies</a></li>
@@ -55,8 +55,8 @@ onMounted(() => {
         <li><a href="#">About us</a></li>
       </ul>
       <template v-if="!isMobile">
-        <HiringAndContacts class="[&>*]:mr-12 ml-auto mt-[2px]" />
-        <BookACallBtn />
+        <HiringAndContacts class="[&>*]:mr-3 lg:[&>*]:mr-10 ml-auto mt-[2px]" />
+        <BookACallBtn v-if="!isTablet" />
       </template>
     </nav>
   </header>
