@@ -3,7 +3,7 @@ import { onMounted, watch } from 'vue';
 import { gsap } from 'gsap';
 import { useMobileDevice } from '@/composable/useMobileDevice';
 
-const { isMobile } = useMobileDevice();
+const { isMobile, isTablet } = useMobileDevice();
 
 const props = defineProps({
   card: {
@@ -41,9 +41,9 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div>
+  <div class="absolute h-full">
     <div
-      class="px-4 py-2 sm:p-8 sm:pr-12 sm:min-h-[490px] sm:w-[60vw] flex flex-col sm:overflow-hidden relative"
+      class="h-full px-4 py-2 sm:p-8 sm:pr-12 md:min-h-[490px] lg:min-h-[580px] sm:w-[60vw] flex flex-col sm:overflow-hidden relative"
       @mouseenter="$emit('focusIn')"
       @mouseleave="$emit('focusOut')"
     >
@@ -52,17 +52,17 @@ onMounted(() => {
         {{ props.card.header }}
       </h3>
       <p
-        v-for="(paragraph, index) in isMobile ? props.card.mobileParagraph : props.card.paragraph"
+        v-for="(paragraph, index) in (isTablet || isMobile) ? props.card.mobileParagraph : props.card.paragraph"
         :key="index"
         class="the-card pt-3 sm:pt-7 sm:max-w-[47rem]"
-        :class="[index + 1 === props.card.paragraph.length && 'pb-14', props.animationName]"
+        :class="props.animationName"
       >
         {{ paragraph }}
       </p>
-      <div :class="props.animationName">
+      <div :class="props.animationName" class="pb-12">
         <slot name="icon" />
       </div>
-      <div :class="props.animationName" class="mb-5 sm:mt-auto sm:mb-0">
+      <div :class="props.animationName" class="mb-5 mt-auto ml-auto sm:mb-0">
         <slot name="button" />
       </div>
     </div>

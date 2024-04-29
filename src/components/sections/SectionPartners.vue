@@ -94,8 +94,8 @@ const stats = [
     </div>
     <div class="flex flex-col w-full items-start text-primary mt-14 sm:mt-0">
       <hr class="trusted-lt--lines border-t-2 border-primary sm:mt-16 mb-2 opacity-50" />
-      <h3 class="trusted-lt text-4xl sm:text-8xl">Trusted long-term partner</h3>
-      <span class="trusted-lt--bottom-section text-xl sm:text-3xl max-w-96 self-end mt-6 sm:mt-3"
+      <h3 class="trusted-lt text-4xl md:text-5xl lg:text-7xl">Trusted long-term partner</h3>
+      <span class="trusted-lt--bottom-section text-md md:text-3xl max-w-96 lg:self-end lg:text-right mt-2 sm:mt-3"
         >For leading B2B tech and service companies</span
       >
       <hr class="trusted-lt--lines border-t-2 border-primary mt-2 sm:mt-6 opacity-50" />

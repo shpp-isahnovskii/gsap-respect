@@ -79,7 +79,7 @@ const images = [
           :key="index"
           :src="image.src"
           :alt="image.alt"
-          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 sm:w-auto"
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 sm:w-28 lg:w-auto"
         />
         <div
           class="generated-lead--border h-full"

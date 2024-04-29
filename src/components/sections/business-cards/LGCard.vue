@@ -1,5 +1,5 @@
 <script setup>
-import BusinessCard from './BusinessCard.vue';
+import BusinessCardTemplate from './BusinessCardTemplate.vue';
 import AimIconTwo from '@/components/icons/AimIconTwo.vue';
 import { gsap } from 'gsap';
 import { onMounted } from 'vue';
@@ -41,7 +41,7 @@ const cardText = {
 };
 </script>
 <template>
-  <BusinessCard
+  <BusinessCardTemplate
     class="lead-gen-card bg-black text-white top-16 left-3 right-6 sm:left-auto sm:ml-0 absolute sm:top-0 sm:-right-[20vw]"
     :class="{ 'z-20' : !isMobile }"
     :card="{ index: 2, ...cardText }"
@@ -54,7 +54,7 @@ const cardText = {
       <AimIconTwo class="absolute bottom-6" />
     </template>
     <template #button>
-      <button class="btn-secondary ml-auto mt-auto">Learn more</button>
+      <button class="btn-secondary">Learn more</button>
     </template>
-  </BusinessCard>
+  </BusinessCardTemplate>
 </template>

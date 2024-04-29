@@ -9,9 +9,7 @@ const { height, width } = useWindowResize();
 let graphMaxHeight = computed(() => Math.floor(height.value * 0.85));
 
 onMounted(() => {
-  /* preset */
-  gsap.set('.section-analytics--paragraph', { opacity: 0 });
-  gsap.set(['.graph-column', '.graph-column--text'], { opacity: 0 });
+  gsap.set(['.section-analytics--paragraph', '.graph-column', '.graph-column--text'], { opacity: 0 });
 
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -35,7 +33,6 @@ onMounted(() => {
     ['.graph-column', '.graph-column--text'],
     {
       opacity: 1,
-      duration: 1,
     },
     '<',
   );
@@ -49,11 +46,11 @@ const adjustableGraph = computed(() => {
 </script>
 
 <template>
-  <section class="relative h-screen w-full bg-white pt-10 sm:pt-20">
+  <section class="relative h-screen w-full bg-white pt-10 lg:pt-20">
     <h2 class="section-analytics--header-text max-w-[1000px] px-2">
       Consistent leads flow to streamline Your business growth.
     </h2>
-    <p class="section-analytics--paragraph px-2 pt-4 sm:pt-8 max-w-[450px]">
+    <p class="section-analytics--paragraph px-2 pt-4 lg:pt-8 max-w-[450px]">
       We combine disruptive marketing techniques with proven tech solutions to provide maximum
       business value.
     </p>
